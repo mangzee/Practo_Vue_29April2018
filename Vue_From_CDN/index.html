@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h1>Trying out Vue</h1>
+    <div id="app">
+        <p>{{text1}}</p>
+        <button v-on:click="changeText">CHANGE</button>
+        <input v-model="text1">
+    </div>
+    <div id="app2">
+        <p>{{text2}}</p>
+        
+    </div>
+    <div>
+        <p>Some static content here</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text1: 'Some sample text'
+            },
+            methods: {
+                changeText() {
+                    window.app2.text2 = 'changed'
+                }
+            }
+        })
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                text2: 'Some more text'
+            }
+        })
+
+
+    </script>
+</body>
+</html>
